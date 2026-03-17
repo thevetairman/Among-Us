@@ -1,0 +1,65 @@
+
+void __thiscall GameData$$AddPlayerInfo(undefined4 param_1,int param_2,undefined4 param_3)
+
+{
+  int iVar1;
+  int iVar2;
+  uint uVar3;
+  int iVar4;
+  int iVar5;
+  undefined4 uVar6;
+  
+  if (DAT_12ac8079 == '\0') {
+    FUN_102e9000(&System.Action_TypeInfo,param_1);
+    FUN_102e9000(&Method$System.Collections.Generic.List<NetworkedPlayerInfo>.Add());
+    FUN_102e9000(&Method$GameData.<>c__DisplayClass33_0.<AddPlayerInfo>b__0());
+    FUN_102e9000(&GameData.<>c__DisplayClass33_0_TypeInfo);
+    DAT_12ac8079 = '\x01';
+  }
+  iVar5 = FUN_102b4400(GameData.<>c__DisplayClass33_0_TypeInfo);
+  Unity.Services.Core.Device.UnityAdsIdentifier$$set_UserId(iVar5,0);
+  if (iVar5 != 0) {
+    *(int *)(iVar5 + 8) = param_2;
+    *(undefined4 *)(iVar5 + 0xc) = param_3;
+    iVar4 = Method$System.Collections.Generic.List<NetworkedPlayerInfo>.Add();
+    iVar1 = *(int *)(param_2 + 0x14);
+    if (iVar1 != 0) {
+      *(int *)(iVar1 + 0x10) = *(int *)(iVar1 + 0x10) + 1;
+      iVar2 = *(int *)(iVar1 + 8);
+      if (iVar2 != 0) {
+        uVar3 = *(uint *)(iVar1 + 0xc);
+        if (uVar3 < *(uint *)(iVar2 + 0xc)) {
+          *(uint *)(iVar1 + 0xc) = uVar3 + 1;
+          if (*(uint *)(iVar2 + 0xc) <= uVar3) {
+                    /* WARNING: Subroutine does not return */
+            thunk_FUN_102c5840();
+          }
+          *(undefined4 *)(iVar2 + 0x10 + uVar3 * 4) = param_3;
+        }
+        else {
+          System.Collections.Generic.List<object>$$AddWithResize
+                    (iVar1,param_3,*(undefined4 *)(*(int *)(*(int *)(iVar4 + 0x10) + 0x60) + 0x38));
+        }
+        iVar1 = *(int *)(iVar5 + 0xc);
+        uVar6 = FUN_102b4400(System.Action_TypeInfo);
+        UnityEngine.AI.NavMesh.OnNavMeshPreUpdate$$.ctor
+                  (uVar6,iVar5,Method$GameData.<>c__DisplayClass33_0.<AddPlayerInfo>b__0(),0);
+        if (iVar1 != 0) {
+          if (DAT_12ac8090 == '\0') {
+            FUN_102e9000(&NetworkedPlayerInfo.<CoCensorNameAsync>d__38_TypeInfo);
+            DAT_12ac8090 = '\x01';
+          }
+          iVar5 = FUN_102b4400(NetworkedPlayerInfo.<CoCensorNameAsync>d__38_TypeInfo);
+          Unity.Services.Core.Device.UnityAdsIdentifier$$set_UserId(iVar5,0);
+          *(undefined4 *)(iVar5 + 8) = 0;
+          *(int *)(iVar5 + 0x10) = iVar1;
+          *(undefined4 *)(iVar5 + 0x14) = uVar6;
+          UnityEngine.MonoBehaviour$$StartCoroutine_Auto(iVar1,iVar5,0);
+          return;
+        }
+      }
+    }
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_102e9230();
+}
