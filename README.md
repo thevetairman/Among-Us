@@ -174,7 +174,7 @@ Impostors are included in the player loop and draw from the same pools as crewma
   - Pool wraps ~1.67 times → 8 short tasks assigned to **2 players**, 4 short tasks assigned to **1 player**
 
 ### Task Overlap Is Predictable
-Because the pool is shuffled once and drawn sequentially, players who join the lobby adjacent to each other will tend to have **different** tasks, while players at wrap-around boundaries may share tasks. Task overlap is more common with larger player counts and smaller task pools.
+Players are iterated in lobby join order. GameData$$AddPlayerInfo uses a standard List.Add, confirmed by tracing the IL2CPP list insertion pattern. The first player to join the lobby draws pool positions 0–1, the second draws positions 2–3, and so on.
 
 ### Strategic Implication for Impostors
 When an impostor claims a long task on Polus in a 10-player game, that task will genuinely be on their fake task list. However, because most long tasks are shared by exactly 3 players, a crewmate can use task overlap as a soft alibi signal — if 3 people already confirmed a task, a 4th claim is **mathematically impossible** without a pool re-evaluation.
