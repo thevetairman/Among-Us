@@ -1,0 +1,102 @@
+
+int NormalPlayerTask$$PickRandomConsoles(int param_1,int param_2)
+
+{
+  int iVar1;
+  int iVar2;
+  undefined4 uVar3;
+  undefined4 uVar4;
+  int iVar5;
+  uint uVar6;
+  undefined4 local_c;
+  int local_8;
+  
+  iVar1 = param_2;
+  if (DAT_12ac70a8 == '\0') {
+    FUN_102e9000(&Method$System.Array.Sort<byte>());
+    FUN_102e9000(&Method$System.Linq.Enumerable.ToList<Console>());
+    FUN_102e9000(&Method$System.Linq.Enumerable.Where<Console>());
+    FUN_102e9000(&Method$Extensions.RandomIdx<Console>());
+    FUN_102e9000(&Extensions_TypeInfo);
+    FUN_102e9000(&System.Func<Console,-bool>_TypeInfo);
+    FUN_102e9000(&Method$System.Collections.Generic.List<Console>.RemoveAt());
+    FUN_102e9000(&Method$System.Collections.Generic.List<Console>..ctor());
+    FUN_102e9000(&Method$System.Collections.Generic.List<Console>.get_Count());
+    FUN_102e9000(&Method$System.Collections.Generic.List<Console>.get_Item());
+    FUN_102e9000(&System.Collections.Generic.List<Console>_TypeInfo);
+    FUN_102e9000(&ShipStatus_TypeInfo);
+    FUN_102e9000(&Method$NormalPlayerTask.<>c__DisplayClass28_0.<PickRandomConsoles>b__0());
+    FUN_102e9000(&NormalPlayerTask.<>c__DisplayClass28_0_TypeInfo);
+    DAT_12ac70a8 = '\x01';
+  }
+  iVar2 = FUN_102b4400(NormalPlayerTask.<>c__DisplayClass28_0_TypeInfo);
+  local_8 = iVar2;
+  Unity.Services.Core.Device.UnityAdsIdentifier$$set_UserId(iVar2,0);
+  if (iVar2 != 0) {
+    *(int *)(iVar2 + 8) = param_1;
+    if (**(int **)(ShipStatus_TypeInfo + 0x5c) != 0) {
+      uVar4 = *(undefined4 *)(**(int **)(ShipStatus_TypeInfo + 0x5c) + 0x98);
+      uVar3 = FUN_102b4400(System.Func<Console,-bool>_TypeInfo);
+      System.Data.Listeners.Func<>$$.ctor
+                (uVar3,local_8,
+                 Method$NormalPlayerTask.<>c__DisplayClass28_0.<PickRandomConsoles>b__0(),0);
+      uVar4 = System.Linq.Enumerable$$Where<float>
+                        (uVar4,uVar3,Method$System.Linq.Enumerable.Where<Console>());
+      iVar2 = System.Linq.Enumerable$$ToList<object>
+                        (uVar4,Method$System.Linq.Enumerable.ToList<Console>());
+      param_1 = iVar2;
+      iVar5 = FUN_102b4400(System.Collections.Generic.List<Console>_TypeInfo);
+      System.Collections.Generic.List<object>$$.ctor
+                (iVar5,iVar2,Method$System.Collections.Generic.List<Console>..ctor());
+      uVar6 = 0;
+      if (iVar1 != 0) {
+        while( true ) {
+          if (*(int *)(iVar1 + 0xc) <= (int)uVar6) {
+            System.Array$$Sort<byte>(iVar1,Method$System.Array.Sort<byte>());
+            return param_1;
+          }
+          if (param_1 == 0) break;
+          if (*(int *)(param_1 + 0xc) < (int)(uVar6 + 1)) {
+            FUN_10002a30(iVar1);
+            param_1 = *(undefined4 *)(iVar1 + 0xc);
+            uVar4 = FUN_102e9030(&int_TypeInfo,&param_1);
+            uVar4 = il2cpp_value_box(uVar4);
+            iVar1 = local_8;
+            FUN_10002a30(local_8);
+            local_c = *(undefined4 *)(iVar1 + 8);
+            uVar3 = FUN_102e9030(&TaskTypes_TypeInfo,&local_c);
+            uVar3 = il2cpp_value_box(uVar3);
+            uVar4 = FUN_102e9030(&StringLiteral_12632,uVar4,uVar3,0);
+            uVar4 = System.String$$Format(uVar4);
+            uVar3 = FUN_102e9030(&System.IndexOutOfRangeException_TypeInfo);
+            uVar3 = FUN_102b4400(uVar3);
+            System.IndexOutOfRangeException$$.ctor(uVar3,uVar4,0);
+            uVar4 = FUN_102e9030(&Method$NormalPlayerTask.PickRandomConsoles());
+                    /* WARNING: Subroutine does not return */
+            FUN_102e91f0(uVar3,uVar4);
+          }
+          if (*(int *)(Extensions_TypeInfo + 0x74) == 0) {
+                    /* WARNING: Subroutine does not return */
+            il2cpp_runtime_class_init(Extensions_TypeInfo);
+          }
+          local_c = Extensions$$RandomIdx<>(iVar5,Method$Extensions.RandomIdx<Console>());
+          if (iVar5 == 0) break;
+          iVar2 = System.Collections.Generic.List<object>$$System.Collections.IList.get_Item
+                            (iVar5,local_c,
+                             Method$System.Collections.Generic.List<Console>.get_Item());
+          if (iVar2 == 0) break;
+          if (*(uint *)(iVar1 + 0xc) <= uVar6) {
+                    /* WARNING: Subroutine does not return */
+            thunk_FUN_102c5840();
+          }
+          *(undefined1 *)(uVar6 + 0x10 + iVar1) = *(undefined1 *)(iVar2 + 0x14);
+          System.Collections.Generic.List<object>$$RemoveAt
+                    (iVar5,local_c,Method$System.Collections.Generic.List<Console>.RemoveAt());
+          uVar6 = uVar6 + 1;
+        }
+      }
+    }
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_102e9230();
+}
