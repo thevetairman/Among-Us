@@ -1,0 +1,11 @@
+# Among Us Task Distribution — Reverse Engineering Findings
+
+## Summary
+## Methodology (tools used: Il2CppDumper, dnSpy, Ghidra)
+## Key Functions Found
+  - ShipStatus$$Begin
+  - ShipStatus$$AddTasksFromList
+  - NetworkedPlayerInfo$$RpcSetTasks
+## The Algorithm (step by step)
+## Implications (Polus 10-player math etc.)
+## Code Snippets (paste the decompiled pseudocode)
